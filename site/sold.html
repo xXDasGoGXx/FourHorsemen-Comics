@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sold archive | Four Horsemen Comics</title>
+<meta name="description" content="Every comic Four Horsemen Comics has sold, with grade, price and date.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F7F4EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Big+Shoulders+Display:wght@800;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Four Horsemen Comics home">
+      <img src="assets/logo.svg" alt="" width="44" height="44">
+      <span class="brand-name">Four Horsemen<small>Comics</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="sold.html" aria-current="page">Sold archive</a>
+      <a href="./#sell">Sell to us</a>
+      <a href="./#grading">Grading</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+    <a class="btn small header-cta" href="./#contact">Get an offer</a>
+    <button class="btn menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-title">
+    <div class="wrap">
+      <h1 class="plates" data-register>Sold archive</h1>
+      <p>Every book we've sold, with its grade, price and date. Check any offer we make against these numbers.</p>
+    </div>
+  </section>
+
+  <div class="tools">
+    <div class="wrap">
+      <label class="visually-hidden" for="q">Search sales</label>
+      <input id="q" type="search" placeholder="Search title, issue or character" autocomplete="off">
+      <div class="seg" data-group="pub" role="group" aria-label="Publisher">
+        <button type="button" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-value="Marvel" aria-pressed="false">Marvel</button>
+        <button type="button" data-value="DC" aria-pressed="false">DC</button>
+      </div>
+      <div class="seg" data-group="decade" role="group" aria-label="Decade">
+        <button type="button" data-value="all" aria-pressed="true">Any year</button>
+        <button type="button" data-value="1960" aria-pressed="false">'60s</button>
+        <button type="button" data-value="1970" aria-pressed="false">'70s</button>
+      </div>
+      <label class="visually-hidden" for="sort">Sort</label>
+      <select id="sort">
+        <option value="new">Newest sale first</option>
+        <option value="high">Price, high to low</option>
+        <option value="low">Price, low to high</option>
+        <option value="year">Publication year</option>
+      </select>
+      <span class="result-count" id="count" role="status"></span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="sample-note" id="archive-note" hidden><b>Sample listings.</b> These show how the archive will look; real sales replace them.</p>
+      <div class="grid" id="archive"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="plate-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap" style="padding-top:40px">
+    <a class="brand" href="./"><img src="assets/logo.svg" alt="" width="44" height="44"><span class="brand-name">Four Horsemen<small>Comics</small></span></a>
+    <nav aria-label="Footer">
+      <a href="sold.html">Sold archive</a>
+      <a href="./#sell">Sell to us</a>
+      <a href="./#grading">Grading</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+    <p class="fine">© <span id="year">2026</span> Four Horsemen Comics. Character and title names belong to their publishers and are used only to identify the comics we buy and sell; Four Horsemen Comics is not affiliated with Marvel or DC.</p>
+  </div>
+</footer>
+
+<dialog class="detail" aria-label="Sale details">
+  <button class="btn small detail-close" type="button">Close</button>
+  <div class="detail-body"></div>
+</dialog>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
