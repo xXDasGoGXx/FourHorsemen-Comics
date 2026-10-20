@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Four Horsemen Comics horseshoe">
+  <title>Four Horsemen Comics</title>
+  <defs>
+    <path id="shoe" d="M29 86 L29 50 A21 21 0 0 1 71 50 L71 86" fill="none" stroke-width="15" stroke-linecap="butt"/>
+  </defs>
+  <g style="mix-blend-mode:multiply">
+    <use href="#shoe" stroke="#00A3E0" transform="translate(-2.6 1.6)"/>
+    <use href="#shoe" stroke="#E6007E" transform="translate(2.4 -1.2)"/>
+    <use href="#shoe" stroke="#FFE600" transform="translate(0.6 2.8)"/>
+  </g>
+  <use href="#shoe" stroke="#000"/>
+  <g fill="#F7F4EC">
+    <rect x="27.2" y="78" width="3.6" height="5" rx="0.6"/>
+    <rect x="27.2" y="67" width="3.6" height="5" rx="0.6"/>
+    <rect x="27.2" y="56" width="3.6" height="5" rx="0.6"/>
+    <rect x="28.4" y="45" width="3.6" height="5" rx="0.6" transform="rotate(18 30.2 47.5)"/>
+    <rect x="69.2" y="78" width="3.6" height="5" rx="0.6"/>
+    <rect x="69.2" y="67" width="3.6" height="5" rx="0.6"/>
+    <rect x="69.2" y="56" width="3.6" height="5" rx="0.6"/>
+    <rect x="68" y="45" width="3.6" height="5" rx="0.6" transform="rotate(-18 69.8 47.5)"/>
+  </g>
+</svg>
