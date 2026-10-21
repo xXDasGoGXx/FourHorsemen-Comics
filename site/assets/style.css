@@ -281,3 +281,20 @@ dialog.detail::backdrop { background: rgba(15,10,20,.7); }
 .form-status.ok { color: #1E7B34; }
 .form-status.err { color: var(--red); }
 .form button[disabled] { opacity: .6; cursor: progress; }
+
+/* Phone: header link, hero line, contact line */
+.header-call { color: var(--yellow); font-weight: 800; font-size: 1.02rem; text-decoration: none; white-space: nowrap; }
+.header-call:hover { text-decoration: underline; }
+.header-call .short { display: none; }
+.hero-call { margin: 22px 0 0; font-size: clamp(1.1rem, 2.4vw, 1.35rem); color: #F3EEE4; font-weight: 600; }
+.hero-call a { color: var(--yellow); font-weight: 800; white-space: nowrap; }
+.call-line { font-size: 1.45rem; font-weight: 600; margin-bottom: 4px; }
+.call-line a { font-weight: 800; white-space: nowrap; }
+@media (max-width: 900px) {
+  .header-call { background: var(--yellow); color: var(--ink); padding: 9px 14px 8px; border: 3px solid var(--ink); font-size: 1rem; }
+  .header-call .long { display: none; }
+  .header-call .short { display: inline; }
+}
+.nav a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 901px) { .header-call .pre { display: none; } }
+.header-cta { white-space: nowrap; }
