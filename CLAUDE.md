@@ -22,6 +22,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   only when it has entries. Same fields plus `soldOn` (YYYY-MM-DD); optional `photo` (`photos/<file>.jpg` under
   `site/`). Only real sales the owner reports go here; invented sales never do (owner asked 2026-10-20, Claude
   declined and built the honest price guide instead).
+- Owner: Matthew Malleo (named on the site at his request, contact card + footer).
 - Contact email: `site/data/settings.json` `contactEmail` = admin@fourhorsemencomics.net (mailbox on the mail
   server since 2026-10-20, see Mail-Server-Recovery).
 - Logo: the owner's artwork, cut out of its gray background: `assets/logo-hero.webp` (hero) and
