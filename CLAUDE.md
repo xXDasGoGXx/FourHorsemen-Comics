@@ -37,6 +37,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page so visitors get the new files at once.
 
 ## Log (newest first)
+- 2026-10-20: Owner confirmed all 'Why everyone wins' promises. Deals are local first (Tucson, cash); shipping + PayPal for bigger books farther away. The PayPal address is NOT published on the site (given per deal by email).
 - 2026-10-20: Payment: cash in person (Tucson) or PayPal, both directions (owner: no card machine). Shown in Step 3 and both 'Why everyone wins' lists.
 - 2026-10-20: Owner card links his eBay account abandcomics (member since 2011, 100% positive, checked 2026-10-20 on ebay.com/usr/abandcomics). Re-check if the feedback changes.
 - 2026-10-20: Tucson / Southern Arizona added; contact form now sends straight to admin@ (no mail app needed), CSS/JS ?v=5.
