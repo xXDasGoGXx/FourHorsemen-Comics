@@ -37,6 +37,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page so visitors get the new files at once.
 
 ## Log (newest first)
+- 2026-10-20: Owner card links his eBay account abandcomics (member since 2011, 100% positive, checked 2026-10-20 on ebay.com/usr/abandcomics). Re-check if the feedback changes.
 - 2026-10-20: Tucson / Southern Arizona added; contact form now sends straight to admin@ (no mail app needed), CSS/JS ?v=5.
 - 2026-10-20: v2: owner's logo, comic-style redesign, "we buy all comics, keys are our specialty / you never know" message, 50-book price guide from real auction results (prices.html; sold.html redirects), samples removed, contact email live.
 - 2026-10-20: Site v1 built (home, sold archive, sell steps, grading guide, contact form), 50 sample sales.
