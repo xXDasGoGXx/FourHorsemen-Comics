@@ -64,13 +64,21 @@
   const gradeText = (b) => `${b.graded ? "CGC" : "Raw"} ${b.grade} ${Number(b.gradeNumber).toFixed(1)}`;
   const when = (b) => b.soldOn || b.lastSale;
 
+  // Link to the auction page of the copy behind a price: real photos of that exact book, hosted by Heritage.
+  const isLotPage = (u) => /\/itm\/|item\.zx\?saleNo=/.test(u || "");
+  function photoLink(b, cls) {
+    if (!b.sourceUrl) return "";
+    const text = isLotPage(b.sourceUrl) ? "See this copy's photos" : "See it at Heritage";
+    return `<a class="${cls}" href="${esc(b.sourceUrl)}" target="_blank" rel="noopener" aria-label="${esc(`${text}: ${b.title} #${b.issue} at Heritage Auctions (opens a new tab)`)}">${text}</a>`;
+  }
+
   function cardHTML(b, kind) {
     const label = kind === "sold" ? `Sold ${month(when(b))}` : `${b.sales && b.sales.length > 1 ? `Avg of ${b.sales.length} sales` : "Sold"}, ${month(when(b))}`;
-    return `<button class="card" type="button" data-kind="${kind}" data-id="${esc(b.id)}" aria-label="${esc(`${b.title} #${b.issue}, ${gradeText(b)}: ${money(b.price)}`)}">
+    return `<div class="card-wrap"><button class="card" type="button" data-kind="${kind}" data-id="${esc(b.id)}" aria-label="${esc(`${b.title} #${b.issue}, ${gradeText(b)}: ${money(b.price)}`)}">
       ${coverHTML(b)}
       <div class="card-meta"><span class="t">${esc(b.title)} #${esc(b.issue)}</span><span class="p">${money(b.price)}</span>
       <span class="g">${esc(gradeText(b))}<br>${esc(label)}</span></div>
-    </button>`;
+    </button>${kind === "market" ? photoLink(b, "photo-link") : ""}</div>`;
   }
 
   /* ---------- detail dialog ---------- */
@@ -93,7 +101,7 @@
           ${kind === "sold" ? `<dt>Sold</dt><dd>${esc(day(b.soldOn))}</dd>` : `<dt>Sales</dt><dd>${sales}</dd>
           <dt>Source</dt><dd><a href="${esc(b.sourceUrl)}" target="_blank" rel="noopener">${esc(b.source)}</a></dd>`}
         </dl>
-        <p style="margin-top:18px"><a class="btn red small" href="./#contact">Have one? Ask us</a></p>
+        <p class="cta-row" style="margin-top:18px">${kind === "market" ? photoLink(b, "btn small") : ""}<a class="btn red small" href="./#contact">Have one? Ask us</a></p>
       </div>`;
     if (typeof dialog.showModal === "function") dialog.showModal(); else dialog.setAttribute("open", "");
   }
