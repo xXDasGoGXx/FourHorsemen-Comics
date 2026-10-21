@@ -274,3 +274,10 @@ dialog.detail::backdrop { background: rgba(15,10,20,.7); }
 .site-footer a:hover { text-decoration: underline; }
 .site-footer .fine { width: 100%; color: #B9B1A3; font-size: .875rem; margin: 8px 0 0; max-width: 90ch; }
 .burst-bar { height: 10px; background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--orange) 40px 80px, var(--yellow) 80px 120px, var(--blue) 120px 160px); }
+
+/* Location line under the hero lede; hidden trap field on the contact form */
+.where { font-family: "Bangers", Impact, sans-serif; letter-spacing: .06em; font-size: clamp(1.05rem, 2.2vw, 1.35rem); color: var(--yellow); margin: -6px 0 22px; text-shadow: 2px 2px 0 var(--night); }
+.form .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-status.ok { color: #1E7B34; }
+.form-status.err { color: var(--red); }
+.form button[disabled] { opacity: .6; cursor: progress; }

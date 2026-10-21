@@ -22,7 +22,11 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   only when it has entries. Same fields plus `soldOn` (YYYY-MM-DD); optional `photo` (`photos/<file>.jpg` under
   `site/`). Only real sales the owner reports go here; invented sales never do (owner asked 2026-10-20, Claude
   declined and built the honest price guide instead).
-- Owner: Matthew Malleo (named on the site at his request, contact card + footer).
+- Owner: Matthew Malleo, Tucson, Arizona (named on the site at his request: hero "Based in Tucson, buying and selling
+  across Southern Arizona", contact card, footer, meta description).
+- Contact form: POSTs JSON to `/api/contact` (name, email, phone, intent, books, message, hidden `website` trap,
+  `t` = page-open time). OMV container `fourhorsemen-contact` (OMV-Docker-Rebuild `compose/proxy-security`) emails it
+  to admin@fourhorsemencomics.net with Reply-To = the visitor. Rate limits: nginx 6/min, service 5/hour per visitor.
 - Contact email: `site/data/settings.json` `contactEmail` = admin@fourhorsemencomics.net (mailbox on the mail
   server since 2026-10-20, see Mail-Server-Recovery).
 - Logo: the owner's artwork, cut out of its gray background: `assets/logo-hero.webp` (hero) and
@@ -33,5 +37,6 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page so visitors get the new files at once.
 
 ## Log (newest first)
+- 2026-10-20: Tucson / Southern Arizona added; contact form now sends straight to admin@ (no mail app needed), CSS/JS ?v=5.
 - 2026-10-20: v2: owner's logo, comic-style redesign, "we buy all comics, keys are our specialty / you never know" message, 50-book price guide from real auction results (prices.html; sold.html redirects), samples removed, contact email live.
 - 2026-10-20: Site v1 built (home, sold archive, sell steps, grading guide, contact form), 50 sample sales.
