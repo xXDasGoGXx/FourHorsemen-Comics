@@ -1,0 +1,1084 @@
+{
+ "_readme": "Market guide: real recent auction results (Heritage Auctions, CGC-graded copies) for books Four Horsemen Comics buys and sells. 'price' is the average of the listed sales. Researched 2026-10-20. These are NOT Four Horsemen's own sales; those go in sold.json.",
+ "checked": "2026-10-20",
+ "books": [
+  {
+   "id": "asm129",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "129",
+   "year": 1974,
+   "grade": "VG+",
+   "gradeNumber": 4.5,
+   "graded": true,
+   "price": 750,
+   "sales": [
+    {
+     "price": 750,
+     "date": "2024-04-09"
+    }
+   ],
+   "lastSale": "2024-04-09",
+   "note": "First appearance of the Punisher",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/the-amazing-spider-man-129-marvel-1974-cgc-vg-45-off-white-to-white-pages/a/122415-13722.s"
+  },
+  {
+   "id": "asm121",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "121",
+   "year": 1973,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 192,
+   "sales": [
+    {
+     "price": 192,
+     "date": "2025-09-30"
+    }
+   ],
+   "lastSale": "2025-09-30",
+   "note": "Death of Gwen Stacy",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122539&lotNo=19778"
+  },
+  {
+   "id": "asm122",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "122",
+   "year": 1973,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 139,
+   "sales": [
+    {
+     "price": 139,
+     "date": "2025-08-12"
+    }
+   ],
+   "lastSale": "2025-08-12",
+   "note": "Death of the Green Goblin",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/the-amazing-spider-man.s?id=26427"
+  },
+  {
+   "id": "asm101",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "101",
+   "year": 1971,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 180,
+   "sales": [
+    {
+     "price": 180,
+     "date": "2025-09-02"
+    }
+   ],
+   "lastSale": "2025-09-02",
+   "note": "First appearance of Morbius",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122535&lotNo=11754"
+  },
+  {
+   "id": "asm39",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "39",
+   "year": 1966,
+   "grade": "GD/VG",
+   "gradeNumber": 3.0,
+   "graded": true,
+   "price": 139,
+   "sales": [
+    {
+     "price": 139,
+     "date": "2025-01-28"
+    }
+   ],
+   "lastSale": "2025-01-28",
+   "note": "John Romita Sr. begins; Green Goblin unmasked",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/the-amazing-spider-man.s?id=20261"
+  },
+  {
+   "id": "asm100",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "100",
+   "year": 1971,
+   "grade": "FN-",
+   "gradeNumber": 5.5,
+   "graded": true,
+   "price": 114,
+   "sales": [
+    {
+     "price": 114,
+     "date": "2025-08-19"
+    }
+   ],
+   "lastSale": "2025-08-19",
+   "note": "Anniversary issue",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/the-amazing-spider-man-100-marvel-1971-cgc-fn-55-white-pages/a/122533-15726.s"
+  },
+  {
+   "id": "hulk102",
+   "publisher": "Marvel",
+   "title": "Incredible Hulk",
+   "issue": "102",
+   "year": 1968,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 99,
+   "sales": [
+    {
+     "price": 99,
+     "date": "2025-08-19"
+    }
+   ],
+   "lastSale": "2025-08-19",
+   "note": "The Hulk returns to his own title",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122436&lotNo=11592"
+  },
+  {
+   "id": "hulk180",
+   "publisher": "Marvel",
+   "title": "Incredible Hulk",
+   "issue": "180",
+   "year": 1974,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 336,
+   "sales": [
+    {
+     "price": 336,
+     "date": "2025-08-19"
+    }
+   ],
+   "lastSale": "2025-08-19",
+   "note": "First Wolverine cameo, last panel",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122533&lotNo=15939"
+  },
+  {
+   "id": "xmen94",
+   "publisher": "Marvel",
+   "title": "X-Men",
+   "issue": "94",
+   "year": 1975,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 456,
+   "sales": [
+    {
+     "price": 456,
+     "date": "2025-01-21"
+    }
+   ],
+   "lastSale": "2025-01-21",
+   "note": "The new X-Men take over the series",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122503&lotNo=16172"
+  },
+  {
+   "id": "xmen50",
+   "publisher": "Marvel",
+   "title": "X-Men",
+   "issue": "50",
+   "year": 1968,
+   "grade": "VG+",
+   "gradeNumber": 4.5,
+   "graded": true,
+   "price": 159,
+   "sales": [
+    {
+     "price": 159,
+     "date": "2025-11-18"
+    }
+   ],
+   "lastSale": "2025-11-18",
+   "note": "Jim Steranko cover and new logo",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/x-men.s?id=22339"
+  },
+  {
+   "id": "avengers57",
+   "publisher": "Marvel",
+   "title": "Avengers",
+   "issue": "57",
+   "year": 1968,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 240,
+   "sales": [
+    {
+     "price": 240,
+     "date": "2025-12-12"
+    }
+   ],
+   "lastSale": "2025-12-12",
+   "note": "First Silver Age appearance of the Vision",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/the-avengers.s?id=22241"
+  },
+  {
+   "id": "tos57",
+   "publisher": "Marvel",
+   "title": "Tales of Suspense",
+   "issue": "57",
+   "year": 1964,
+   "grade": "VG+",
+   "gradeNumber": 4.5,
+   "graded": true,
+   "price": 348,
+   "sales": [
+    {
+     "price": 348,
+     "date": "2025-11-17"
+    }
+   ],
+   "lastSale": "2025-11-17",
+   "note": "First appearance of Hawkeye",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/silver-age-1956-1969-/superhero/tales-of-suspense-57-marvel-1964-cgc-vg-45-off-white-to-white-pages/a/122546-15480.s"
+  },
+  {
+   "id": "im55",
+   "publisher": "Marvel",
+   "title": "Iron Man",
+   "issue": "55",
+   "year": 1973,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 336,
+   "sales": [
+    {
+     "price": 336,
+     "date": "2025-08-12"
+    }
+   ],
+   "lastSale": "2025-08-12",
+   "note": "First appearances of Thanos and Drax",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/iron-man.s?id=25939"
+  },
+  {
+   "id": "im1",
+   "publisher": "Marvel",
+   "title": "Iron Man",
+   "issue": "1",
+   "year": 1968,
+   "grade": "VG",
+   "gradeNumber": 4.0,
+   "graded": true,
+   "price": 360,
+   "sales": [
+    {
+     "price": 312,
+     "date": "2025-09-23"
+    },
+    {
+     "price": 408,
+     "date": "2025-07-01"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "Iron Man's solo series begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122530&lotNo=19611"
+  },
+  {
+   "id": "cap117",
+   "publisher": "Marvel",
+   "title": "Captain America",
+   "issue": "117",
+   "year": 1969,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 246,
+   "sales": [
+    {
+     "price": 204,
+     "date": "2025-04-15"
+    },
+    {
+     "price": 288,
+     "date": "2025-02-04"
+    }
+   ],
+   "lastSale": "2025-04-15",
+   "note": "First appearance of the Falcon",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/captain-america.s?id=22963"
+  },
+  {
+   "id": "dd16",
+   "publisher": "Marvel",
+   "title": "Daredevil",
+   "issue": "16",
+   "year": 1966,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 159,
+   "sales": [
+    {
+     "price": 159,
+     "date": "2025-12-15"
+    }
+   ],
+   "lastSale": "2025-12-15",
+   "note": "Spider-Man crossover, John Romita Sr. art",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/silver-age-1956-1969-/superhero/daredevil-16-marvel-1966-cgc-fn-60-off-white-to-white-pages/a/122550-15323.s"
+  },
+  {
+   "id": "thor165",
+   "publisher": "Marvel",
+   "title": "Thor",
+   "issue": "165",
+   "year": 1969,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 139,
+   "sales": [
+    {
+     "price": 139,
+     "date": "2025-12-30"
+    }
+   ],
+   "lastSale": "2025-12-30",
+   "note": "First full appearance of Him",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/search/results.zx?si=2&dept=1938&sold_status=1526~1524&archive_state=5327&auction_year=2025&auction_name=122552&sb=1&mode=archive&page=48~9&layout=gallery"
+  },
+  {
+   "id": "ss4",
+   "publisher": "Marvel",
+   "title": "Silver Surfer",
+   "issue": "4",
+   "year": 1969,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 504,
+   "sales": [
+    {
+     "price": 504,
+     "date": "2025-09-23"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "Silver Surfer vs. Thor",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/silver-surfer.s?id=43488"
+  },
+  {
+   "id": "conan1",
+   "publisher": "Marvel",
+   "title": "Conan the Barbarian",
+   "issue": "1",
+   "year": 1970,
+   "grade": "FN-",
+   "gradeNumber": 5.5,
+   "graded": true,
+   "price": 234,
+   "sales": [
+    {
+     "price": 288,
+     "date": "2025-09-23"
+    },
+    {
+     "price": 180,
+     "date": "2025-09-16"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "Barry Windsor-Smith art",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/conan-the-barbarian.s?id=23775"
+  },
+  {
+   "id": "wbn33",
+   "publisher": "Marvel",
+   "title": "Werewolf by Night",
+   "issue": "33",
+   "year": 1975,
+   "grade": "VF/NM",
+   "gradeNumber": 9.0,
+   "graded": true,
+   "price": 240,
+   "sales": [
+    {
+     "price": 240,
+     "date": "2025-06-17"
+    }
+   ],
+   "lastSale": "2025-06-17",
+   "note": "Second appearance of Moon Knight",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122524&lotNo=16159"
+  },
+  {
+   "id": "ms5",
+   "publisher": "Marvel",
+   "title": "Marvel Spotlight",
+   "issue": "5",
+   "year": 1972,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 810,
+   "sales": [
+    {
+     "price": 810,
+     "date": "2025-07-15"
+    }
+   ],
+   "lastSale": "2025-07-15",
+   "note": "First appearance of Ghost Rider (Johnny Blaze)",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/marvel-spotlight-5-ghost-rider-marvel-1972-cgc-vg-fn-50-off-white-pages/a/122528-15968.s"
+  },
+  {
+   "id": "tod10",
+   "publisher": "Marvel",
+   "title": "Tomb of Dracula",
+   "issue": "10",
+   "year": 1973,
+   "grade": "VG+",
+   "gradeNumber": 4.5,
+   "graded": true,
+   "price": 528,
+   "sales": [
+    {
+     "price": 528,
+     "date": "2025-06-03"
+    }
+   ],
+   "lastSale": "2025-06-03",
+   "note": "First appearance of Blade",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/horror/tomb-of-dracula-10-marvel-1973-cgc-vg-45-cream-to-off-white-pages/a/122522-11907.s"
+  },
+  {
+   "id": "hfh1",
+   "publisher": "Marvel",
+   "title": "Hero for Hire",
+   "issue": "1",
+   "year": 1972,
+   "grade": "VG",
+   "gradeNumber": 4.0,
+   "graded": true,
+   "price": 99,
+   "sales": [
+    {
+     "price": 99,
+     "date": "2025-12-16"
+    }
+   ],
+   "lastSale": "2025-12-16",
+   "note": "First appearance of Luke Cage",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/hero-for-hire-1-marvel-1972-cgc-vg-40-white-pages/a/122550-15622.s"
+  },
+  {
+   "id": "if14",
+   "publisher": "Marvel",
+   "title": "Iron Fist",
+   "issue": "14",
+   "year": 1977,
+   "grade": "VF/NM",
+   "gradeNumber": 9.0,
+   "graded": true,
+   "price": 408,
+   "sales": [
+    {
+     "price": 408,
+     "date": "2025-09-23"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "First appearance of Sabretooth",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/search/results.zx?si=2&dept=1938&sold_status=1526~1524&archive_state=5327&session_desc=3769&auction_year=2025&auction_name=122538&sb=1&mode=archive&page=48~2&layout=gallery"
+  },
+  {
+   "id": "ff66",
+   "publisher": "Marvel",
+   "title": "Fantastic Four",
+   "issue": "66",
+   "year": 1967,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 528,
+   "sales": [
+    {
+     "price": 528,
+     "date": "2025-07-17"
+    }
+   ],
+   "lastSale": "2025-07-17",
+   "note": "Him emerges from the cocoon",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122339&lotNo=17662"
+  },
+  {
+   "id": "ff112",
+   "publisher": "Marvel",
+   "title": "Fantastic Four",
+   "issue": "112",
+   "year": 1971,
+   "grade": "VF",
+   "gradeNumber": 8.0,
+   "graded": true,
+   "price": 300,
+   "sales": [
+    {
+     "price": 300,
+     "date": "2025-05-13"
+    }
+   ],
+   "lastSale": "2025-05-13",
+   "note": "Hulk vs. the Thing",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122519&lotNo=13916"
+  },
+  {
+   "id": "subm1",
+   "publisher": "Marvel",
+   "title": "Sub-Mariner",
+   "issue": "1",
+   "year": 1968,
+   "grade": "FN+",
+   "gradeNumber": 6.5,
+   "graded": true,
+   "price": 226,
+   "sales": [
+    {
+     "price": 226,
+     "date": "2026-03-24"
+    }
+   ],
+   "lastSale": "2026-03-24",
+   "note": "Namor's solo series begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/sub-mariner.s?id=21876"
+  },
+  {
+   "id": "bat227",
+   "publisher": "DC",
+   "title": "Batman",
+   "issue": "227",
+   "year": 1970,
+   "grade": "FN-",
+   "gradeNumber": 5.5,
+   "graded": true,
+   "price": 588,
+   "sales": [
+    {
+     "price": 588,
+     "date": "2025-12-02"
+    }
+   ],
+   "lastSale": "2025-12-02",
+   "note": "Neal Adams homage to Detective Comics #31",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/batman.s?id=23872"
+  },
+  {
+   "id": "bat232",
+   "publisher": "DC",
+   "title": "Batman",
+   "issue": "232",
+   "year": 1971,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 1080,
+   "sales": [
+    {
+     "price": 1080,
+     "date": "2025-10-28"
+    },
+    {
+     "price": 1080,
+     "date": "2025-07-08"
+    }
+   ],
+   "lastSale": "2025-10-28",
+   "note": "First appearance of Ra's al Ghul",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/batman-232-dc-1971-cgc-nm-92-off-white-to-white-pages/a/122543-17712.s"
+  },
+  {
+   "id": "bat251",
+   "publisher": "DC",
+   "title": "Batman",
+   "issue": "251",
+   "year": 1973,
+   "grade": "VF+",
+   "gradeNumber": 8.5,
+   "graded": true,
+   "price": 720,
+   "sales": [
+    {
+     "price": 720,
+     "date": "2025-11-18"
+    }
+   ],
+   "lastSale": "2025-11-18",
+   "note": "The Joker returns, Neal Adams cover",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/search/results.zx?si=2&dept=1938&sold_status=1526~1524&archive_state=5327&auction_year=2025&auction_name=122546&sb=1&mode=archive&page=72~2&layout=gallery"
+  },
+  {
+   "id": "bat181",
+   "publisher": "DC",
+   "title": "Batman",
+   "issue": "181",
+   "year": 1966,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 696,
+   "sales": [
+    {
+     "price": 696,
+     "date": "2025-05-05"
+    }
+   ],
+   "lastSale": "2025-05-05",
+   "note": "First appearance of Poison Ivy",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122518&lotNo=11404"
+  },
+  {
+   "id": "det400",
+   "publisher": "DC",
+   "title": "Detective Comics",
+   "issue": "400",
+   "year": 1970,
+   "grade": "FN+",
+   "gradeNumber": 6.5,
+   "graded": true,
+   "price": 264,
+   "sales": [
+    {
+     "price": 264,
+     "date": "2025-09-23"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "First appearance of Man-Bat",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122538&lotNo=17834"
+  },
+  {
+   "id": "det359",
+   "publisher": "DC",
+   "title": "Detective Comics",
+   "issue": "359",
+   "year": 1967,
+   "grade": "VG",
+   "gradeNumber": 4.0,
+   "graded": true,
+   "price": 372,
+   "sales": [
+    {
+     "price": 372,
+     "date": "2025-09-02"
+    }
+   ],
+   "lastSale": "2025-09-02",
+   "note": "First appearance of Barbara Gordon as Batgirl",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/search/results.zx?si=2&dept=1938&sold_status=1526~1524&archive_state=5327&auction_year=2025&auction_name=122535&sb=1&mode=archive&page=72~6&layout=gallery"
+  },
+  {
+   "id": "gl85",
+   "publisher": "DC",
+   "title": "Green Lantern",
+   "issue": "85",
+   "year": 1971,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 336,
+   "sales": [
+    {
+     "price": 336,
+     "date": "2025-06-24"
+    }
+   ],
+   "lastSale": "2025-06-24",
+   "note": "Speedy drug story, Neal Adams art",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/green-lantern-85-dc-1971-cgc-nm-92-cream-to-off-white-pages/a/122525-17957.s"
+  },
+  {
+   "id": "jla21",
+   "publisher": "DC",
+   "title": "Justice League of America",
+   "issue": "21",
+   "year": 1963,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 164,
+   "sales": [
+    {
+     "price": 164,
+     "date": "2025-01-14"
+    }
+   ],
+   "lastSale": "2025-01-14",
+   "note": "Crisis on Earth-One: the JSA returns",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/justice-league.s?id=1123914"
+  },
+  {
+   "id": "sup233",
+   "publisher": "DC",
+   "title": "Superman",
+   "issue": "233",
+   "year": 1971,
+   "grade": "FN+",
+   "gradeNumber": 6.5,
+   "graded": true,
+   "price": 169,
+   "sales": [
+    {
+     "price": 169,
+     "date": "2025-07-22"
+    }
+   ],
+   "lastSale": "2025-07-22",
+   "note": "Kryptonite Nevermore begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122529&lotNo=18009"
+  },
+  {
+   "id": "bb85",
+   "publisher": "DC",
+   "title": "Brave and the Bold",
+   "issue": "85",
+   "year": 1969,
+   "grade": "VF",
+   "gradeNumber": 8.0,
+   "graded": true,
+   "price": 134,
+   "sales": [
+    {
+     "price": 134,
+     "date": "2025-09-23"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "Green Arrow's new costume, Neal Adams art",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122538&lotNo=17405"
+  },
+  {
+   "id": "st1",
+   "publisher": "DC",
+   "title": "Swamp Thing",
+   "issue": "1",
+   "year": 1972,
+   "grade": "VF+",
+   "gradeNumber": 8.5,
+   "graded": true,
+   "price": 288,
+   "sales": [
+    {
+     "price": 288,
+     "date": "2025-12-12"
+    }
+   ],
+   "lastSale": "2025-12-12",
+   "note": "Bernie Wrightson art",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-title-index/swamp-thing-1972-series.s?id=2034"
+  },
+  {
+   "id": "shazam1",
+   "publisher": "DC",
+   "title": "Shazam!",
+   "issue": "1",
+   "year": 1973,
+   "grade": "NM/MT",
+   "gradeNumber": 9.8,
+   "graded": true,
+   "price": 432,
+   "sales": [
+    {
+     "price": 432,
+     "date": "2025-09-16"
+    }
+   ],
+   "lastSale": "2025-09-16",
+   "note": "The original Captain Marvel returns",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/shazam-1-dc-1973-cgc-nm-mt-98-white-pages/a/122112-17437.s"
+  },
+  {
+   "id": "ng1",
+   "publisher": "DC",
+   "title": "New Gods",
+   "issue": "1",
+   "year": 1971,
+   "grade": "VF/NM",
+   "gradeNumber": 9.0,
+   "graded": true,
+   "price": 198,
+   "sales": [
+    {
+     "price": 198,
+     "date": "2025-02-04"
+    }
+   ],
+   "lastSale": "2025-02-04",
+   "note": "Jack Kirby's Fourth World begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122505&lotNo=12095"
+  },
+  {
+   "id": "flash175",
+   "publisher": "DC",
+   "title": "Flash",
+   "issue": "175",
+   "year": 1967,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 360,
+   "sales": [
+    {
+     "price": 360,
+     "date": "2025-06-30"
+    }
+   ],
+   "lastSale": "2025-06-30",
+   "note": "Second Superman vs. Flash race",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/silver-age-1956-1969-/superhero/the-flash-155-dc-1965-cgc-nm-96-off-white-to-white-pages/a/122526-11483.s"
+  },
+  {
+   "id": "tt1",
+   "publisher": "DC",
+   "title": "Teen Titans",
+   "issue": "1",
+   "year": 1966,
+   "grade": "FN+",
+   "gradeNumber": 6.5,
+   "graded": true,
+   "price": 154,
+   "sales": [
+    {
+     "price": 154,
+     "date": "2025-06-23"
+    }
+   ],
+   "lastSale": "2025-06-23",
+   "note": "First issue of the series",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122525&lotNo=17738"
+  },
+  {
+   "id": "aqua35",
+   "publisher": "DC",
+   "title": "Aquaman",
+   "issue": "35",
+   "year": 1967,
+   "grade": "VF",
+   "gradeNumber": 8.0,
+   "graded": true,
+   "price": 408,
+   "sales": [
+    {
+     "price": 408,
+     "date": "2025-10-28"
+    }
+   ],
+   "lastSale": "2025-10-28",
+   "note": "First appearance of Black Manta",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/aquaman.s?id=21246"
+  },
+  {
+   "id": "ww178",
+   "publisher": "DC",
+   "title": "Wonder Woman",
+   "issue": "178",
+   "year": 1968,
+   "grade": "VF/NM",
+   "gradeNumber": 9.0,
+   "graded": true,
+   "price": 222,
+   "sales": [
+    {
+     "price": 222,
+     "date": "2025-12-09"
+    }
+   ],
+   "lastSale": "2025-12-09",
+   "note": "Diana's mod-era makeover begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/search/results.zx?si=2&dept=1938&sold_status=1526~1524&archive_state=5327&auction_year=2025&auction_name=122549&sb=1&mode=archive&page=72~7&layout=gallery"
+  },
+  {
+   "id": "ff52",
+   "publisher": "Marvel",
+   "title": "Fantastic Four",
+   "issue": "52",
+   "year": 1966,
+   "grade": "VG/FN",
+   "gradeNumber": 5.0,
+   "graded": true,
+   "price": 480,
+   "sales": [
+    {
+     "price": 504,
+     "date": "2025-09-22"
+    },
+    {
+     "price": 456,
+     "date": "2025-12-22"
+    }
+   ],
+   "lastSale": "2025-12-22",
+   "note": "First appearance of the Black Panther",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122538&lotNo=17481"
+  },
+  {
+   "id": "cap100",
+   "publisher": "Marvel",
+   "title": "Captain America",
+   "issue": "100",
+   "year": 1968,
+   "grade": "VF",
+   "gradeNumber": 8.0,
+   "graded": true,
+   "price": 552,
+   "sales": [
+    {
+     "price": 552,
+     "date": "2025-07-14"
+    }
+   ],
+   "lastSale": "2025-07-14",
+   "note": "Cap's own title begins",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122528&lotNo=15439"
+  },
+  {
+   "id": "mp15",
+   "publisher": "Marvel",
+   "title": "Marvel Premiere",
+   "issue": "15",
+   "year": 1974,
+   "grade": "VF+",
+   "gradeNumber": 8.5,
+   "graded": true,
+   "price": 249,
+   "sales": [
+    {
+     "price": 264,
+     "date": "2025-05-06"
+    },
+    {
+     "price": 234,
+     "date": "2025-09-09"
+    }
+   ],
+   "lastSale": "2025-09-09",
+   "note": "Origin and first appearance of Iron Fist",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122536&lotNo=14010"
+  },
+  {
+   "id": "dd131",
+   "publisher": "Marvel",
+   "title": "Daredevil",
+   "issue": "131",
+   "year": 1976,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 396,
+   "sales": [
+    {
+     "price": 396,
+     "date": "2025-08-26"
+    }
+   ],
+   "lastSale": "2025-08-26",
+   "note": "Origin and first appearance of the new Bullseye",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/comic-issue-index/daredevil.s?id=29646"
+  },
+  {
+   "id": "xmen101",
+   "publisher": "Marvel",
+   "title": "X-Men",
+   "issue": "101",
+   "year": 1976,
+   "grade": "FN",
+   "gradeNumber": 6.0,
+   "graded": true,
+   "price": 234,
+   "sales": [
+    {
+     "price": 276,
+     "date": "2025-09-23"
+    },
+    {
+     "price": 192,
+     "date": "2025-05-27"
+    }
+   ],
+   "lastSale": "2025-09-23",
+   "note": "First appearance of Phoenix",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/c/item.zx?saleNo=122538&lotNo=18114"
+  },
+  {
+   "id": "asm194",
+   "publisher": "Marvel",
+   "title": "Amazing Spider-Man",
+   "issue": "194",
+   "year": 1979,
+   "grade": "NM-",
+   "gradeNumber": 9.2,
+   "graded": true,
+   "price": 336,
+   "sales": [
+    {
+     "price": 336,
+     "date": "2025-11-18"
+    }
+   ],
+   "lastSale": "2025-11-18",
+   "note": "First appearance of the Black Cat",
+   "source": "Heritage Auctions",
+   "sourceUrl": "https://comics.ha.com/itm/bronze-age-1970-1979-/superhero/the-amazing-spider-man-194-marvel-1979-cgc-nm-92-white-pages/a/122546-15547.s"
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price guide | Four Horsemen Comics</title>
+<meta name="description" content="What key Silver and Bronze Age comics really sell for: 50 recent CGC auction results with grade, date and source.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<meta name="theme-color" content="#17131F">
+<meta property="og:title" content="Four Horsemen Comics">
+<meta property="og:description" content="We buy. We sell. Everyone wins. You never know what's in the box.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fourhorsemencomics.net/">
+<meta property="og:image" content="https://fourhorsemencomics.net/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Bangers&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="visually-hidden" href="./#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo-header.webp" alt="Four Horsemen Comics" width="640" height="148"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="prices.html" aria-current="page">Price guide</a>
+      <a href="./#sell">Sell to us</a>
+      <a href="./#grading">Grading</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+    <a class="btn small red header-cta" href="./#contact">Get an offer</a>
+    <button class="btn small menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <h1 class="pow pow-light">Price guide</h1>
+      <p>What key Silver and Bronze Age books are really selling for: 50 recent auction results for CGC-graded copies, with the grade, the date and where each one sold.</p>
+    </div>
+  </section>
+
+  <div class="tools">
+    <div class="wrap">
+      <label class="visually-hidden" for="q">Search books</label>
+      <input id="q" type="search" placeholder="Search title, issue or character" autocomplete="off">
+      <div class="seg" data-group="pub" role="group" aria-label="Publisher">
+        <button type="button" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-value="Marvel" aria-pressed="false">Marvel</button>
+        <button type="button" data-value="DC" aria-pressed="false">DC</button>
+      </div>
+      <div class="seg" data-group="decade" role="group" aria-label="Decade">
+        <button type="button" data-value="all" aria-pressed="true">Any year</button>
+        <button type="button" data-value="1960" aria-pressed="false">'60s</button>
+        <button type="button" data-value="1970" aria-pressed="false">'70s</button>
+      </div>
+      <label class="visually-hidden" for="sort">Sort</label>
+      <select id="sort">
+        <option value="high">Price, high to low</option>
+        <option value="low">Price, low to high</option>
+        <option value="year">Publication year</option>
+        <option value="new">Most recent sale</option>
+      </select>
+      <span class="result-count" id="count" role="status"></span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="data-note">Every figure is a real sale of a CGC-graded copy at Heritage Auctions (2024–26), including the buyer's premium. Where a book sold more than once in the same grade, we show the average. These are market results, not our own sales, and a different grade can mean a very different price. Have one of these? <a href="./#contact">Ask us what yours is worth.</a></p>
+      <div class="grid" id="guide"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="burst-bar" aria-hidden="true"></div>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo-header.webp" alt="Four Horsemen Comics" width="640" height="148"></a>
+    <nav aria-label="Footer">
+      <a href="prices.html">Price guide</a>
+      <a href="./#sell">Sell to us</a>
+      <a href="./#grading">Grading</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+    <p class="fine">© <span id="year">2026</span> Four Horsemen Comics. Price guide figures are public auction results from Heritage Auctions and are shown for reference only. Character and title names belong to their publishers and are used only to identify comics; Four Horsemen Comics is not affiliated with Marvel, DC or Heritage Auctions.</p>
+  </div>
+</footer>
+
+<dialog class="detail" aria-label="Book details">
+  <button class="btn small detail-close" type="button">Close</button>
+  <div class="detail-body"></div>
+</dialog>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

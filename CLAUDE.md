@@ -14,17 +14,21 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   never commit secrets, customer names or addresses.
 
 ## Content
-- Sold comics: `site/data/sold.json` (`sales` list). Fields: `id` (unique), `publisher`, `title`, `issue`
-  (string), `year`, `grade` (e.g. `VG+`), `gradeNumber` (4.5), `graded` (true = CGC slab), `price` (whole
-  dollars), `soldOn` (YYYY-MM-DD), `note` (why it matters), optional `photo` (`photos/<file>.jpg` under
-  `site/`) and `sample`.
-- The 50 listings from 2026-10-20 are **samples** (`"sample": true`, shown with a "Sample" stamp). Real
-  sales must have `sample` false or absent. Never remove the stamp from invented sales: the owner's real
-  sales replace them.
-- Contact email: `site/data/settings.json` `contactEmail`. Empty = the form says the address is being set up.
-- Covers are drawn by `site/assets/app.js` (no publisher artwork or logos may be added; owner photos of
-  his own books are fine via `photo`).
-- Fonts: Google Fonts (Big Shoulders Display, Archivo).
+- `site/data/market.json` (`books`): the **price guide**: 50 real Heritage Auctions results for CGC-graded copies
+  (researched 2026-10-20). Fields: `id`, `publisher`, `title`, `issue` (string), `year`, `grade`, `gradeNumber`,
+  `graded`, `price` (average of `sales`), `sales` [{price, date}], `lastSale`, `note`, `source`, `sourceUrl`.
+  These are market results, never presented as the owner's own sales. Update by re-checking real results.
+- `site/data/sold.json` (`sales`): the owner's **own** sales; the home page's "Sold by Four Horsemen" section shows
+  only when it has entries. Same fields plus `soldOn` (YYYY-MM-DD); optional `photo` (`photos/<file>.jpg` under
+  `site/`). Only real sales the owner reports go here; invented sales never do (owner asked 2026-10-20, Claude
+  declined and built the honest price guide instead).
+- Contact email: `site/data/settings.json` `contactEmail` = admin@fourhorsemencomics.net (mailbox on the mail
+  server since 2026-10-20, see Mail-Server-Recovery).
+- Logo: the owner's artwork, cut out of its gray background: `assets/logo-hero.webp` (hero) and
+  `assets/logo-header.webp` (header/footer); `assets/og-image.jpg` for link previews; `assets/logo.svg` is the
+  favicon (horseshoe). Covers are drawn by `site/assets/app.js` (no publisher artwork may be added).
+- Fonts: Google Fonts (Bangers for display, Archivo for text).
 
 ## Log (newest first)
+- 2026-10-20: v2: owner's logo, comic-style redesign, "we buy all comics, keys are our specialty / you never know" message, 50-book price guide from real auction results (prices.html; sold.html redirects), samples removed, contact email live.
 - 2026-10-20: Site v1 built (home, sold archive, sell steps, grading guide, contact form), 50 sample sales.
