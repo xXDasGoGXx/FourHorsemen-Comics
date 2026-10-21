@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Four Horsemen Comics | We buy and sell comics. Keys are our specialty.</title>
-<meta name="description" content="Four Horsemen Comics buys and sells comics, from a single issue to whole collections, and specializes in key issues and high-grade Silver and Bronze Age books. Send photos for a free look.">
+<meta name="description" content="Four Horsemen Comics, in Tucson, Arizona, buys and sells comics across Southern Arizona, from a single issue to whole collections, and specializes in key issues and high-grade Silver and Bronze Age books. Send photos for a free look.">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <meta name="theme-color" content="#17131F">
 <meta property="og:title" content="Four Horsemen Comics">
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Bangers&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 <a class="visually-hidden" href="#main">Skip to content</a>
@@ -40,6 +40,7 @@
       <img class="hero-logo" data-slam src="assets/logo-hero.webp" alt="Four Horsemen Comics" width="1400" height="427">
       <h1 class="pow pow-light">We buy. We sell. Everyone wins.</h1>
       <p class="lede">From a single issue to a basement full of long boxes, every comic gets a real look. Key issues and sharp Silver and Bronze Age books are our specialty.</p>
+      <p class="where">Based in Tucson, buying and selling across Southern Arizona</p>
       <div class="cta-row">
         <a class="btn red" href="#contact">Sell your comics</a>
         <a class="btn" href="prices.html">See what books sell for</a>
@@ -225,14 +226,16 @@
         <p class="mail-line" data-email-wrap>Or email <a data-email href="mailto:admin@fourhorsemencomics.net">admin@fourhorsemencomics.net</a></p>
         <div class="owner-card">
           <p class="caption">Who you're dealing with</p>
-          <p><strong>Matthew Malleo</strong> runs Four Horsemen Comics. Every message to admin@fourhorsemencomics.net comes straight to him, and he answers it himself.</p>
+          <p><strong>Matthew Malleo</strong> runs Four Horsemen Comics out of Tucson, Arizona. Every message to admin@fourhorsemencomics.net comes straight to him, and he answers it himself.</p>
         </div>
       </div>
       <form class="form" id="contact-form" novalidate>
         <div class="row">
           <label>Your name <input name="name" autocomplete="name" required></label>
-          <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel"></label>
+          <label>Your email <input name="email" type="email" autocomplete="email" inputmode="email" required></label>
         </div>
+        <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="hp" aria-hidden="true">Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label>
         <fieldset>
           <legend>I want to</legend>
           <label class="chip"><input type="radio" name="intent" value="Sell" checked><span>Sell</span></label>
@@ -241,7 +244,7 @@
         </fieldset>
         <label>Which books <textarea name="books" placeholder="A box of 70s Marvel from my uncle&#10;Amazing Spider-Man #129, looks pretty good" required></textarea></label>
         <label>Anything else (optional) <input name="message"></label>
-        <p class="hint">Sending opens your email app with this filled in, addressed to admin@fourhorsemencomics.net.</p>
+        <p class="hint">Your message goes straight to Matthew at admin@fourhorsemencomics.net, and he replies to the email you give.</p>
         <div><button class="btn red" type="submit">Send message</button></div>
         <p class="form-status" id="form-status" role="status"></p>
       </form>
@@ -259,7 +262,7 @@
       <a href="#grading">Grading</a>
       <a href="#contact">Contact</a>
     </nav>
-    <p class="fine">© <span id="year">2026</span> Four Horsemen Comics, Matthew Malleo, <a href="mailto:admin@fourhorsemencomics.net">admin@fourhorsemencomics.net</a>. Price guide figures are public auction results from Heritage Auctions and are shown for reference only. Character and title names belong to their publishers and are used only to identify comics; Four Horsemen Comics is not affiliated with Marvel, DC or Heritage Auctions.</p>
+    <p class="fine">© <span id="year">2026</span> Four Horsemen Comics, Matthew Malleo, Tucson, Arizona, <a href="mailto:admin@fourhorsemencomics.net">admin@fourhorsemencomics.net</a>. Price guide figures are public auction results from Heritage Auctions and are shown for reference only. Character and title names belong to their publishers and are used only to identify comics; Four Horsemen Comics is not affiliated with Marvel, DC or Heritage Auctions.</p>
   </div>
 </footer>
 
@@ -268,6 +271,6 @@
   <div class="detail-body"></div>
 </dialog>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>

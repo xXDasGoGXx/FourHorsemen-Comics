@@ -201,20 +201,27 @@
     const form = $("#contact-form");
     if (!form) return;
     const status = $("#form-status");
-    const to = (settings.contactEmail || "").trim();
-    $$("[data-email]").forEach((a) => { if (to) { a.href = "mailto:" + to; a.textContent = to; } });
+    const button = form.querySelector('button[type="submit"]');
+    const to = (settings.contactEmail || "admin@fourhorsemencomics.net").trim();
+    const opened = Date.now();
+    const say = (msg, kind) => { status.textContent = msg; status.className = "form-status" + (kind ? " " + kind : ""); };
+    $$("[data-email]").forEach((a) => { a.href = "mailto:" + to; a.textContent = to; });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const d = new FormData(form);
-      const name = String(d.get("name") || "").trim();
-      const books = String(d.get("books") || "").trim();
-      if (!name || !books) { status.textContent = "Add your name and a few words about the books, then send again."; return; }
-      if (!to) { status.textContent = "Our email address isn't set up yet. Please check back soon."; return; }
-      const intent = d.get("intent") || "Sell";
-      const subject = `${intent}: ${books.split("\n")[0].slice(0, 60)}`;
-      const body = [`Name: ${name}`, `Phone: ${d.get("phone") || "-"}`, `I want to: ${intent}`, "", "Books:", books, "", String(d.get("message") || "")].join("\n");
-      location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = "Your email app should open with the message filled in. Press send there.";
+      const v = (k) => String(d.get(k) || "").trim();
+      const body = { name: v("name"), email: v("email"), phone: v("phone"), intent: v("intent") || "Sell", books: v("books"), message: v("message"), website: v("website"), t: opened };
+      if (!body.name || !body.books) { say("Add your name and a few words about the books, then send again.", "err"); return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email)) { say("Add your email so Matthew can write back.", "err"); return; }
+      button.disabled = true; say("Sending...");
+      fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+        .then((r) => r.json().catch(() => ({})).then((j) => ({ ok: r.ok && j.ok, j })))
+        .then(({ ok, j }) => {
+          if (ok) { form.reset(); say("Sent! Matthew will email you back soon.", "ok"); }
+          else say(j.error || "That didn't go through. Please email " + to + " instead.", "err");
+        })
+        .catch(() => say("That didn't go through. Please email " + to + " instead.", "err"))
+        .finally(() => { button.disabled = false; });
     });
   }
 
