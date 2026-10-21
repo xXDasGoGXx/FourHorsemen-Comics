@@ -27,6 +27,8 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
 - Contact form: POSTs JSON to `/api/contact` (name, email, phone, intent, books, message, hidden `website` trap,
   `t` = page-open time). OMV container `fourhorsemen-contact` (OMV-Docker-Rebuild `compose/proxy-security`) emails it
   to admin@fourhorsemencomics.net with Reply-To = the visitor. Rate limits: nginx 6/min, service 5/hour per visitor.
+- Phone (owner's cell, published at his request 2026-10-20): (520) 272-3253, `tel:+15202723253`. Shown in the header
+  ("Call" button on phones), hero ("Rather talk?"), contact section, footers, meta description, and the car magnet.
 - Contact email: `site/data/settings.json` `contactEmail` = admin@fourhorsemencomics.net (mailbox on the mail
   server since 2026-10-20, see Mail-Server-Recovery).
 - Logo: the owner's artwork, cut out of its gray background: `assets/logo-hero.webp` (hero) and
@@ -37,6 +39,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page so visitors get the new files at once.
 
 ## Log (newest first)
+- 2026-10-20: Phone number added site-wide (tap to call); CSS/JS ?v=6.
 - 2026-10-20: Owner confirmed all 'Why everyone wins' promises. Deals are local first (Tucson, cash); shipping + PayPal for bigger books farther away. The PayPal address is NOT published on the site (given per deal by email).
 - 2026-10-20: Payment: cash in person (Tucson) or PayPal, both directions (owner: no card machine). Shown in Step 3 and both 'Why everyone wins' lists.
 - 2026-10-20: Owner card links his eBay account abandcomics (member since 2011, 100% positive, checked 2026-10-20 on ebay.com/usr/abandcomics). Re-check if the feedback changes.
