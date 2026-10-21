@@ -28,6 +28,8 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `assets/logo-header.webp` (header/footer); `assets/og-image.jpg` for link previews; `assets/logo.svg` is the
   favicon (horseshoe). Covers are drawn by `site/assets/app.js` (no publisher artwork may be added).
 - Fonts: Google Fonts (Bangers for display, Archivo for text).
+- Caching: `/assets/` is cached for an hour (browsers and Cloudflare). When style.css or app.js change, bump the
+  `?v=N` on their links in every HTML page so visitors get the new files at once.
 
 ## Log (newest first)
 - 2026-10-20: v2: owner's logo, comic-style redesign, "we buy all comics, keys are our specialty / you never know" message, 50-book price guide from real auction results (prices.html; sold.html redirects), samples removed, contact email live.
