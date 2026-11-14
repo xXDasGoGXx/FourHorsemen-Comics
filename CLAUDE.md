@@ -22,6 +22,12 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   (must print IN STEP).
 - `marketing/`: car magnet PDF/PNG/source and the business description text.
 
+## eBay listing packages (`listings/`, 2026-11-14)
+- Matthew sends photos + details; Claude writes `listings/<sku>/listing.json` + his photos (`01.jpg`...), commits to
+  `main`, runs the gateway's `ebay-preview <sku> <commit>` (eBay dry run with fees), shows him, and on his OK runs
+  `ebay-post` (he approves in the app). Format and rules: `listings/README.md`. Only his own photos, never stock or
+  publisher images. Not part of the website (`site/` only is published).
+
 ## Content (v3, 2026-11-14)
 - Pages: `index.html` (hero "I buy comics. I sell comics.", Key of the Day, what I buy, how it works, want lists and
   selling tips, why there's no price list, about Matthew + FAQ, contact form), `learn.html` (plain-English value guide:
@@ -52,6 +58,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page (now `?v=7`).
 
 ## Log (newest first)
+- 2026-11-14: `listings/` folder for eBay listing packages (gateway catalog v36 `ebay-preview` / `ebay-post`); `defaults.json` comes after the eBay keys are on the gateway and `ebay-account` shows the policy IDs.
 - 2026-11-14: v3 live (b862bff). Restore kit added: docs/RESTORE.md, deploy/compose.yaml (+ check-in-step.py, IN STEP), marketing/ (car magnet, description); README rewritten.
 - 2026-11-14: v3 redesign at the owner's request ("too much like a template... juvenile"): calmer grown-up look, first person, price guide and drawn covers removed, Key of the Day, learn.html guide. ?v=7.
 - 2026-10-20: Phone number added site-wide (tap to call); CSS/JS ?v=6.
