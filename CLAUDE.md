@@ -13,6 +13,15 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
 - Roll back = revert the commit on `main`. The repo is public on purpose (OMV pulls it without keys);
   never commit secrets, customer names or addresses.
 
+## Restore kit (owner, 2026-11-14: "in case the OMV server crashes we have a way to restore it")
+- `docs/RESTORE.md`: every piece of the site and how to bring it back (containers, NPM hosts #2/#3 + cert #5,
+  Cloudflare records, contact form). Update its tables and "Last checked" line when any of those change.
+- `deploy/compose.yaml`: stand-alone copy of the three `fourhorsemen-*` services and their configs, verbatim from
+  OMV-Docker-Rebuild `compose/proxy-security/compose.yaml` (production stays the source of truth). After changing
+  production, copy the blocks here and run `python3 deploy/check-in-step.py <path to production compose.yaml>`
+  (must print IN STEP).
+- `marketing/`: car magnet PDF/PNG/source and the business description text.
+
 ## Content (v3, 2026-11-14)
 - Pages: `index.html` (hero "I buy comics. I sell comics.", Key of the Day, what I buy, how it works, want lists and
   selling tips, why there's no price list, about Matthew + FAQ, contact form), `learn.html` (plain-English value guide:
@@ -43,6 +52,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page (now `?v=7`).
 
 ## Log (newest first)
+- 2026-11-14: v3 live (b862bff). Restore kit added: docs/RESTORE.md, deploy/compose.yaml (+ check-in-step.py, IN STEP), marketing/ (car magnet, description); README rewritten.
 - 2026-11-14: v3 redesign at the owner's request ("too much like a template... juvenile"): calmer grown-up look, first person, price guide and drawn covers removed, Key of the Day, learn.html guide. ?v=7.
 - 2026-10-20: Phone number added site-wide (tap to call); CSS/JS ?v=6.
 - 2026-10-20: Owner confirmed all 'Why everyone wins' promises. Deals are local first (Tucson, cash); shipping + PayPal for bigger books farther away. The PayPal address is NOT published on the site (given per deal by email).
