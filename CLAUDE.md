@@ -13,32 +13,37 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
 - Roll back = revert the commit on `main`. The repo is public on purpose (OMV pulls it without keys);
   never commit secrets, customer names or addresses.
 
-## Content
-- `site/data/market.json` (`books`): the **price guide**: 50 real Heritage Auctions results for CGC-graded copies
-  (researched 2026-10-20). Fields: `id`, `publisher`, `title`, `issue` (string), `year`, `grade`, `gradeNumber`,
-  `graded`, `price` (average of `sales`), `sales` [{price, date}], `lastSale`, `note`, `source`, `sourceUrl`.
-  These are market results, never presented as the owner's own sales. Update by re-checking real results.
-- `site/data/sold.json` (`sales`): the owner's **own** sales; the home page's "Sold by Four Horsemen" section shows
-  only when it has entries. Same fields plus `soldOn` (YYYY-MM-DD); optional `photo` (`photos/<file>.jpg` under
-  `site/`). Only real sales the owner reports go here; invented sales never do (owner asked 2026-10-20, Claude
-  declined and built the honest price guide instead).
-- Owner: Matthew Malleo, Tucson, Arizona (named on the site at his request: hero "Based in Tucson, buying and selling
-  across Southern Arizona", contact card, footer, meta description).
+## Content (v3, 2026-11-14)
+- Pages: `index.html` (hero "I buy comics. I sell comics.", Key of the Day, what I buy, how it works, want lists and
+  selling tips, why there's no price list, about Matthew + FAQ, contact form), `learn.html` (plain-English value guide:
+  keys, eras, grading scale, raw vs slabbed, variants and reprints, why prices move, how to check sold prices, storage),
+  `404.html`. `prices.html` redirects to `learn.html`, `sold.html` to the front page.
+- Voice: first person ("I"), Matthew speaking. Only promises the owner confirmed (cash in person around Tucson,
+  PayPal for shipped books, straight answer even if he passes, want lists, offers based on current sales).
+- **No prices anywhere.** The owner removed the Heritage price guide on 2026-11-14 because old sale prices set false
+  expectations ("a comic could've sold for $1000 a year ago but right now it's only 300"). Do not bring back price
+  lists or dollar estimates per book.
+- **No sold section** until the owner has real sales and asks for it (removed with `data/sold.json`). Invented sales
+  are never added (owner asked 2026-10-20, Claude declined).
+- `site/data/keys.json`: Key of the Day list (title, issue, cover-date year, publisher, one-line fact; no prices).
+  The page shows entry (days since 1970 mod count), so it changes every day with no upkeep. Facts must be well
+  established; add or fix entries there only.
+- Images: the owner's own photos are welcome (put them under `site/assets/` or `site/photos/`). Never add publisher
+  cover scans or other sellers' listing photos.
+- Owner: Matthew Malleo, Tucson, Arizona; eBay `abandcomics` since 2011, 100% positive (checked 2026-10-20).
+- Phone (owner's cell, published at his request 2026-10-20): (520) 272-3253, `tel:+15202723253`, in the header pill,
+  hero, contact section and footers (and the car magnet).
 - Contact form: POSTs JSON to `/api/contact` (name, email, phone, intent, books, message, hidden `website` trap,
   `t` = page-open time). OMV container `fourhorsemen-contact` (OMV-Docker-Rebuild `compose/proxy-security`) emails it
   to admin@fourhorsemencomics.net with Reply-To = the visitor. Rate limits: nginx 6/min, service 5/hour per visitor.
-- Phone (owner's cell, published at his request 2026-10-20): (520) 272-3253, `tel:+15202723253`. Shown in the header
-  ("Call" button on phones), hero ("Rather talk?"), contact section, footers, meta description, and the car magnet.
-- Contact email: `site/data/settings.json` `contactEmail` = admin@fourhorsemencomics.net (mailbox on the mail
-  server since 2026-10-20, see Mail-Server-Recovery).
 - Logo: the owner's artwork, cut out of its gray background: `assets/logo-hero.webp` (hero) and
-  `assets/logo-header.webp` (header/footer); `assets/og-image.jpg` for link previews; `assets/logo.svg` is the
-  favicon (horseshoe). Covers are drawn by `site/assets/app.js` (no publisher artwork may be added).
-- Fonts: Google Fonts (Bangers for display, Archivo for text).
+  `assets/logo-header.webp` (header/footer); `assets/og-image.jpg` for link previews; `assets/logo.svg` is the favicon.
+- Fonts: Inter from Google Fonts (`opsz` axis; headings use the display size). Colors are tokens in `style.css`.
 - Caching: `/assets/` is cached for an hour (browsers and Cloudflare). When style.css or app.js change, bump the
-  `?v=N` on their links in every HTML page so visitors get the new files at once.
+  `?v=N` on their links in every HTML page (now `?v=7`).
 
 ## Log (newest first)
+- 2026-11-14: v3 redesign at the owner's request ("too much like a template... juvenile"): calmer grown-up look, first person, price guide and drawn covers removed, Key of the Day, learn.html guide. ?v=7.
 - 2026-10-20: Phone number added site-wide (tap to call); CSS/JS ?v=6.
 - 2026-10-20: Owner confirmed all 'Why everyone wins' promises. Deals are local first (Tucson, cash); shipping + PayPal for bigger books farther away. The PayPal address is NOT published on the site (given per deal by email).
 - 2026-10-20: Payment: cash in person (Tucson) or PayPal, both directions (owner: no card machine). Shown in Step 3 and both 'Why everyone wins' lists.
