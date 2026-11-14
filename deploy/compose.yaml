@@ -1,0 +1,292 @@
+# FourHorsemenComics.net: the three containers that run the site, as a stand-alone Compose project.
+#
+# Production runs these same services inside OMV's Compose project `proxy-security`, whose file lives in the
+# private repo OMV-Docker-Rebuild at compose/proxy-security/compose.yaml. That file is the production source of
+# truth; this copy exists so the site can be rebuilt from THIS repo alone (see docs/RESTORE.md). The services and
+# configs below are copied verbatim; deploy/check-in-step.py confirms they still match.
+#
+# Use it only where proxy-security's own fourhorsemen-* containers are NOT running (same container names, same
+# port 8095). Start:  docker compose -f deploy/compose.yaml up -d
+# Then point Nginx Proxy Manager's two hosts (fourhorsemencomics.net, www) at <this host's IP>:8095.
+# The contact form mails through the mail VM at 192.168.1.190 (extra_hosts below); change it if the mail VM moves.
+name: fourhorsemen
+
+services:
+  # FourHorsemenComics.net public website (static). NPM proxies fourhorsemencomics.net and www to
+  # 192.168.2.181:8095. Content comes from GitHub xXDasGoGXx/FourHorsemen-Comics (public), branch main,
+  # folder site/: fourhorsemen-sync pulls it every 2 minutes into releases/<commit> and points
+  # "current" at it. Publishing = merging to main. Live commit: https://fourhorsemencomics.net/version.txt
+  fourhorsemen-web:
+    image: nginx:1.31.6-alpine
+    container_name: fourhorsemen-web
+    restart: unless-stopped
+    ports:
+      - "8095:80"
+    environment:
+      TZ: America/Phoenix
+      # Compose does not recreate a container when only its inline config text changes: bump CONFIG_REV
+      # whenever configs.fourhorsemen_nginx changes so the sync recreates nginx with the new file.
+      CONFIG_REV: "2"
+    volumes:
+      - /srv/docker/volumes/fourhorsemen-web/site:/site:ro
+    configs:
+      - source: fourhorsemen_nginx
+        target: /etc/nginx/conf.d/default.conf
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Contact form for FourHorsemenComics.net: fourhorsemen-web passes POST /api/contact here; it sends one
+  # plain-text email per message to admin@fourhorsemencomics.net through the mail VM on the LAN
+  # (port 25, STARTTLS with the mail certificate checked). No storage; logs show only intent and visitor IP.
+  fourhorsemen-contact:
+    image: python:3.13-alpine
+    container_name: fourhorsemen-contact
+    restart: unless-stopped
+    user: "65534:65534"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    command: ["python3", "-u", "/contact.py"]
+    environment:
+      TZ: America/Phoenix
+      CONFIG_REV: "2"   # bump when configs.fourhorsemen_contact changes (see fourhorsemen-web)
+      MAIL_HOST: mail.fourhorsemencomics.net
+      MAIL_PORT: "25"
+      MAIL_TO: admin@fourhorsemencomics.net
+      MAIL_FROM: website@fourhorsemencomics.net
+      PER_HOUR: "5"
+    extra_hosts:
+      - "mail.fourhorsemencomics.net:192.168.1.190"
+    configs:
+      - source: fourhorsemen_contact
+        target: /contact.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  fourhorsemen-sync:
+    image: alpine/git:v2.54.0
+    container_name: fourhorsemen-sync
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/fourhorsemen-sync.sh"]
+    environment:
+      TZ: America/Phoenix
+      REPO: https://github.com/xXDasGoGXx/FourHorsemen-Comics.git
+      BRANCH: main
+      INTERVAL: "120"
+    volumes:
+      - /srv/docker/volumes/fourhorsemen-web/site:/site
+    configs:
+      - source: fourhorsemen_sync
+        target: /fourhorsemen-sync.sh
+    healthcheck:
+      test: ["CMD", "test", "-f", "/site/current/index.html"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+
+configs:
+  fourhorsemen_nginx:
+    content: |
+      map $$http_cf_connecting_ip $$fh_contact_key { "" $$binary_remote_addr; default $$http_cf_connecting_ip; }
+      limit_req_zone $$fh_contact_key zone=fh_contact:1m rate=6r/m;
+      server {
+        listen 80 default_server;
+        server_name _;
+        root /site/current;
+        index index.html;
+        charset utf-8;
+        server_tokens off;
+        gzip on;
+        gzip_types text/css application/javascript application/json image/svg+xml;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+        add_header X-Frame-Options SAMEORIGIN always;
+        location = /healthz { access_log off; return 200 "ok\n"; }
+        location ~ /\. { deny all; }
+        location = /api/contact {
+          limit_except POST { deny all; }
+          limit_req zone=fh_contact burst=3 nodelay;
+          limit_req_status 429;
+          client_max_body_size 16k;
+          resolver 127.0.0.11 valid=30s ipv6=off;
+          set $$fh_contact fourhorsemen-contact:8080;
+          proxy_pass http://$$fh_contact/contact;
+          proxy_set_header Host $$host;
+          proxy_set_header CF-Connecting-IP $$http_cf_connecting_ip;
+          proxy_set_header X-Forwarded-For $$proxy_add_x_forwarded_for;
+          proxy_read_timeout 30s;
+          add_header Cache-Control "no-store" always;
+        }
+        location /assets/ { add_header Cache-Control "public, max-age=3600" always; add_header X-Content-Type-Options nosniff always; }
+        location /data/ { add_header Cache-Control "no-cache" always; add_header X-Content-Type-Options nosniff always; }
+        location / { try_files $$uri $$uri.html $$uri/ =404; }
+        error_page 404 /404.html;
+      }
+  fourhorsemen_sync:
+    content: |
+      #!/bin/sh
+      # Pull the website from GitHub main and publish site/ as releases/<commit>, then switch "current".
+      set -u
+      cache=/site/.git-cache
+      log() { echo "$$(date '+%F %T') $$*"; }
+      mkdir -p /site/releases
+      while :; do
+        if [ -d "$$cache/.git" ]; then
+          if ! git -C "$$cache" fetch -q --depth 1 origin "$$BRANCH" || ! git -C "$$cache" reset -q --hard FETCH_HEAD; then
+            log "fetch failed; keeping the current release"; sleep "$$INTERVAL"; continue
+          fi
+        else
+          rm -rf "$$cache"
+          if ! git clone -q --depth 1 -b "$$BRANCH" "$$REPO" "$$cache"; then log "clone failed"; sleep 30; continue; fi
+        fi
+        sha="$$(git -C "$$cache" rev-parse --short=12 HEAD)"
+        if [ "$$(readlink /site/current 2>/dev/null)" != "releases/$$sha" ]; then
+          if [ -f "$$cache/site/index.html" ]; then
+            rm -rf "/site/releases/$$sha" "/site/releases/$$sha.tmp"
+            cp -R "$$cache/site" "/site/releases/$$sha.tmp" \
+              && printf '%s\n' "$$sha" > "/site/releases/$$sha.tmp/version.txt" \
+              && chmod -R a+rX "/site/releases/$$sha.tmp" \
+              && mv "/site/releases/$$sha.tmp" "/site/releases/$$sha" \
+              && ln -sfn "releases/$$sha" /site/current \
+              && log "published $$sha"
+            for old in $$(ls -1t /site/releases | tail -n +6); do
+              [ "releases/$$old" = "$$(readlink /site/current)" ] || rm -rf "/site/releases/$$old"
+            done
+          else
+            log "commit $$sha has no site/index.html; keeping the current release"
+          fi
+        fi
+        sleep "$$INTERVAL"
+      done
+  fourhorsemen_contact:
+    content: |
+      #!/usr/bin/env python3
+      # FourHorsemenComics.net contact form: POST /contact (JSON) -> one plain-text email to MAIL_TO,
+      # handed to the mail server on the LAN (port 25, STARTTLS, certificate checked). Stdlib only.
+      import json, os, re, smtplib, ssl, sys, threading, time
+      from email.message import EmailMessage
+      from email.utils import formataddr, make_msgid, formatdate
+      from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+      MAIL_HOST = os.environ.get("MAIL_HOST", "mail.fourhorsemencomics.net")
+      MAIL_PORT = int(os.environ.get("MAIL_PORT", "25"))
+      MAIL_TO = os.environ.get("MAIL_TO", "admin@fourhorsemencomics.net")
+      MAIL_FROM = os.environ.get("MAIL_FROM", "website@fourhorsemencomics.net")
+      PER_HOUR = int(os.environ.get("PER_HOUR", "5"))
+      EMAIL_RE = re.compile(r"^[^@\s<>,;:\"]{1,64}@[A-Za-z0-9.-]{1,190}\.[A-Za-z]{2,24}$$")
+      INTENTS = {"Sell", "Buy", "Get a book looked at"}
+      hits, lock = {}, threading.Lock()
+
+      def one_line(s, n):
+          return re.sub(r"[\r\n\t]+", " ", str(s or "")).strip()[:n]
+
+      def limited(ip):
+          now = time.time()
+          with lock:
+              q = [t for t in hits.get(ip, []) if now - t < 3600]
+              if len(q) >= PER_HOUR:
+                  hits[ip] = q
+                  return True
+              q.append(now)
+              hits[ip] = q
+              if len(hits) > 5000:
+                  for k in list(hits)[:2500]:
+                      hits.pop(k, None)
+              return False
+
+      def send(d, ip):
+          m = EmailMessage()
+          intent = d["intent"]
+          m["Subject"] = f"Website: {intent} - {d['name']}"
+          m["From"] = formataddr(("FourHorsemenComics.net form", MAIL_FROM))
+          m["To"] = MAIL_TO
+          m["Reply-To"] = formataddr((d["name"], d["email"]))
+          m["Date"] = formatdate(localtime=True)
+          m["Message-ID"] = make_msgid(domain="fourhorsemencomics.net")
+          m.set_content("\n".join([
+              f"Name:   {d['name']}",
+              f"Email:  {d['email']}",
+              f"Phone:  {d['phone'] or '-'}",
+              f"Wants:  {intent}",
+              "",
+              "Books:",
+              d["books"],
+              "",
+              "Anything else:",
+              d["message"] or "-",
+              "",
+              f"(Sent from the contact form on fourhorsemencomics.net, {time.strftime('%Y-%m-%d %H:%M %Z')}, visitor IP {ip}. Reply to answer them.)",
+          ]))
+          ctx = ssl.create_default_context()
+          with smtplib.SMTP(MAIL_HOST, MAIL_PORT, local_hostname="www.fourhorsemencomics.net", timeout=20) as s:
+              s.starttls(context=ctx)
+              s.send_message(m)
+
+      class H(BaseHTTPRequestHandler):
+          server_version = "contact"
+          def log_message(self, fmt, *a):
+              sys.stdout.write("%s %s\n" % (time.strftime("%F %T"), fmt % a))
+          def reply(self, code, obj):
+              b = json.dumps(obj).encode()
+              self.send_response(code)
+              self.send_header("Content-Type", "application/json")
+              self.send_header("Content-Length", str(len(b)))
+              self.send_header("Cache-Control", "no-store")
+              self.end_headers()
+              self.wfile.write(b)
+          def do_GET(self):
+              if self.path == "/healthz":
+                  return self.reply(200, {"ok": True})
+              self.reply(404, {"ok": False})
+          def do_POST(self):
+              if self.path != "/contact":
+                  return self.reply(404, {"ok": False})
+              ip = one_line(self.headers.get("CF-Connecting-IP") or (self.headers.get("X-Forwarded-For") or "").split(",")[0] or self.client_address[0], 64)
+              try:
+                  n = int(self.headers.get("Content-Length") or 0)
+                  if n <= 0 or n > 16000:
+                      raise ValueError
+                  raw = json.loads(self.rfile.read(n).decode("utf-8", "replace"))
+                  if not isinstance(raw, dict):
+                      raise ValueError
+              except Exception:
+                  return self.reply(400, {"ok": False, "error": "The form didn't come through. Refresh the page and try again."})
+              if raw.get("website"):  # hidden trap field: people never fill it in
+                  return self.reply(200, {"ok": True})
+              try:
+                  age = time.time() * 1000 - float(raw["t"])
+              except Exception:
+                  age = -1  # no page-open time: not sent by the site's own form
+              if age > 86400000:
+                  return self.reply(400, {"ok": False, "error": "This page has been open a long time. Refresh it, then send again."})
+              if age < 3000:
+                  return self.reply(400, {"ok": False, "error": "That was quick! Wait a moment and press Send again."})
+              d = {
+                  "name": one_line(raw.get("name"), 80),
+                  "email": one_line(raw.get("email"), 200),
+                  "phone": one_line(raw.get("phone"), 40),
+                  "intent": one_line(raw.get("intent"), 40) if one_line(raw.get("intent"), 40) in INTENTS else "Sell",
+                  "books": str(raw.get("books") or "").strip()[:4000],
+                  "message": str(raw.get("message") or "").strip()[:2000],
+              }
+              if not d["name"] or not d["books"]:
+                  return self.reply(400, {"ok": False, "error": "Add your name and a few words about the books, then send again."})
+              if not EMAIL_RE.match(d["email"]):
+                  return self.reply(400, {"ok": False, "error": "Check your email address so we can write back."})
+              if limited(ip):
+                  return self.reply(429, {"ok": False, "error": "Too many messages from here in the last hour. Please email admin@fourhorsemencomics.net instead."})
+              try:
+                  send(d, ip)
+              except Exception as e:
+                  sys.stdout.write("%s SEND FAILED: %s\n" % (time.strftime("%F %T"), e))
+                  return self.reply(502, {"ok": False, "error": "The message couldn't be sent right now. Please email admin@fourhorsemencomics.net."})
+              sys.stdout.write("%s sent: %s (%s)\n" % (time.strftime("%F %T"), d["intent"], ip))
+              self.reply(200, {"ok": True})
+
+      ThreadingHTTPServer(("0.0.0.0", 8080), H).serve_forever()
