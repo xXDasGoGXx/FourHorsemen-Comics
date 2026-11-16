@@ -58,6 +58,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   `?v=N` on their links in every HTML page (now `?v=7`).
 
 ## Log (newest first)
+- 2026-11-15: Google Business Profile created by the owner under a Google account on admin@fourhorsemencomics.net (category Comic book store, service area business, address hidden, hours 8-8 daily, phone + website); video verification submitted, Google says up to 5 days. Logo/cover for it: `marketing/google-profile-*.png` (upload after verification). Still open: Google Search Console (owner sends the `google-site-verification=` TXT value, Claude adds it with cf-dns-create).
 - 2026-11-15: Search basics: `sitemap.xml` + Sitemap line in robots.txt, canonical links, schema.org Store data (phone, Tucson service area, eBay link; no street address). Site was not in search results yet; Google Search Console (DNS TXT via Cloudflare) and a Google Business Profile (service area, address hidden) are the owner's next steps.
 - 2026-11-14: `listings/` folder for eBay listing packages (gateway catalog v36 `ebay-preview` / `ebay-post`); `defaults.json` comes after the eBay keys are on the gateway and `ebay-account` shows the policy IDs.
 - 2026-11-14: v3 live (b862bff). Restore kit added: docs/RESTORE.md, deploy/compose.yaml (+ check-in-step.py, IN STEP), marketing/ (car magnet, description); README rewritten.
