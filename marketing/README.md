@@ -3,10 +3,12 @@
 ## Car door magnet (24 x 12 in)
 
 - `Four-Horsemen-car-magnet-24x12.pdf`: upload this to the printer (for example VistaPrint "car magnets",
-  12 x 24 in, "Upload your design"). Order two, one per door.
-- `Four-Horsemen-car-magnet-24x12-150dpi.png`: the same design as an image, for shops that want one.
-- `car-magnet-source.html`: the source. Open it in Chrome and print to PDF at 24 x 12 in with no margins to make
-  a new version (for example after a phone number change).
+  12 x 24 in, "Upload your design"). Order two, one per door. It is the finished picture at 300 dpi with no fonts
+  inside: VistaPrint refused the first version ("Embed all fonts in the PDF", 2026-11-15) because Chrome had stored
+  the lettering as Type 3 fonts.
+- `Four-Horsemen-car-magnet-24x12-300dpi.jpg`: the same design as an image (7200 x 3600), for shops that want one.
+- `car-magnet-source.html`: the source. To make a new version (for example after a phone number change), render it
+  at 24 x 12 in and 300 dpi as an image, then save that image as the PDF; never print it to PDF with live text.
 
 Before ordering: the magnet must sit on a flat steel part of the door (no creases, not aluminum doors). Take it
 off weekly and before car washes.
