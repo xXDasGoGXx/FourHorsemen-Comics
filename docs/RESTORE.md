@@ -95,6 +95,10 @@ Today these are NPM proxy hosts **#2** and **#3** with certificate **#5** (valid
 |---|---|---|---|
 | A | `fourhorsemencomics.net` | `207.108.121.181` | proxied (orange) |
 | CNAME | `www` | `fourhorsemencomics.net` | proxied (orange) |
+| CNAME | `moeglpd573sq` | `gv-djvbg7pp74qr7k.dv.googlehosted.com` | DNS only (grey) |
+
+The `moeglpd573sq` CNAME is the Google Search Console ownership proof (added 2026-11-15). Keep it: removing it
+unverifies the site in Search Console.
 
 Mail records in the same zone (`mail` A to `207.108.121.180` DNS only, MX, SPF, DMARC, DKIM) belong to the mail
 server: see Mail-Server-Recovery `docs/DNS.md`. The DKIM value must match the mail server's private key, so take it
