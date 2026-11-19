@@ -3,6 +3,41 @@
 Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is the public website
 **https://fourhorsemencomics.net** (owner's comic buying/selling business: "we buy, we sell, everyone wins").
 
+## Status and open items (start here in a new chat; keep this section current)
+Last updated 2026-11-19. New chats start with no repos attached: attach FourHorsemen-Comics (and HomeCommander-Claude
+for anything on the servers), read both CLAUDE.md files, then this list.
+
+**Live and done**
+- Website v3 live, `main` = live (check `version.txt`). Restore kit in `docs/RESTORE.md` + `deploy/`.
+- Google: Search Console verified (CNAME `moeglpd573sq`, keep it), sitemap submitted; Business Profile **verified
+  2026-11-19** (admin@fourhorsemencomics.net Google account, service area, address hidden, hours 8-8).
+- Cloudflare zone rule `Block` fixed 2026-11-19 so Googlebot reaches the website (expression in RESTORE.md).
+  Non-US visitors are still blocked on purpose.
+- Car magnets: 24x12 design in `marketing/`; the owner ordered 2 from VistaPrint (2026-11-15, font-free PDF).
+- Hidden preview page `/originalart` (see Log 2026-11-18), sent to the owner's artist friend.
+
+**Waiting on the owner (nothing for Claude to do until he says)**
+- Search Console: owner to tap *Request indexing* (home page) and *Validate fix* on the 403 report if not done yet;
+  Google emails admin@ when validation passes.
+- Business Profile: add a recovery email (his Yahoo), upload `marketing/google-profile-logo-1080.png` (logo) and
+  `google-profile-cover-1920x1080.png` (cover), later real phone photos (comics, the car with the magnet).
+- Original art consignment: waiting for the friend's answer. If yes: get his photos + size, medium, year, price per
+  piece and the agreed cut, then replace the preview with the real page (real PayPal buttons, still "ships from the
+  artist"). If no: delete `site/originalart.html`.
+- eBay posting (HomeCommander-Claude catalog v36/v37, `ebay-post` OFF, no keys): owner said "for later". Needs his
+  eBay developer Production keyset + Auth'n'Auth token via `lanner/set-provider-secret.sh ebay` on fhc, then switch
+  on `ebay-post`, then `ebay-account` -> write `listings/defaults.json`. Steps: HomeCommander-Claude docs/OPERATIONS.md
+  "eBay listings".
+
+**Things to remember**
+- fourhorsemencomics.**com** is an unrelated store (Four Horsemen Comics and Gaming, Morgantown WV). Always ".net".
+  Not fixable (they use it); local Google results put the owner first for Tucson searches.
+- The admin@ mailbox password was set by the owner (2026-10-20, add-mail-domain.sh); Claude never had it. The Google
+  account on admin@ has its own password (owner reset it 2026-11-19).
+- Car-ad statistics (30-70k impressions, 97 % recall) are wrap-industry survey numbers, not evidence for door
+  magnets; the honest measure is asking callers how they found him.
+- Schwab/stock trading was discussed once and dropped at the owner's request: do not bring it back.
+
 ## How it goes live
 - Everything under `site/` is the website. Static files only, no build step.
 - **Publishing = merging to `main`.** On OMV, container `fourhorsemen-sync` (compose project
@@ -20,7 +55,7 @@ Owner works from an iPad (see HomeCommander-Claude `CLAUDE.md`). This repo is th
   OMV-Docker-Rebuild `compose/proxy-security/compose.yaml` (production stays the source of truth). After changing
   production, copy the blocks here and run `python3 deploy/check-in-step.py <path to production compose.yaml>`
   (must print IN STEP).
-- `marketing/`: car magnet PDF/PNG/source and the business description text.
+- `marketing/`: car magnet PDF (font-free 300 dpi raster) + JPG + source, Google Business Profile logo/cover, and the business description text.
 
 ## eBay listing packages (`listings/`, 2026-11-14)
 - Matthew sends photos + details; Claude writes `listings/<sku>/listing.json` + his photos (`01.jpg`...), commits to
