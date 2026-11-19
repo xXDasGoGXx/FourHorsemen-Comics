@@ -4,7 +4,7 @@ Everything needed to bring the website back lives in this repository, except two
 are kept elsewhere on purpose: Nginx Proxy Manager's certificate data and the mail server's keys. Both are named
 below with where they live.
 
-Last checked against the live setup: **2026-11-14** (live commit `b862bff`, `deploy/compose.yaml` in step with
+Last checked against the live setup: **2026-11-19** (Cloudflare rule below); before that **2026-11-14** (live commit `b862bff`, `deploy/compose.yaml` in step with
 production, Cloudflare and NPM as listed below).
 
 ## What makes up the site
@@ -104,6 +104,20 @@ Mail records in the same zone (`mail` A to `207.108.121.180` DNS only, MX, SPF, 
 server: see Mail-Server-Recovery `docs/DNS.md`. The DKIM value must match the mail server's private key, so take it
 from there, never from memory. Other CNAMEs in the zone (`omv`, `plex`, `books`, ...) are for the owner's other
 services, not the website.
+
+### Cloudflare security rule "Block" (zone-wide custom rule)
+
+Expression since 2026-11-19 (Security -> Security rules -> Custom rules -> `Block`, action Block, default 403 page):
+
+```
+(ip.src.country ne "US") or (cf.client.bot and not http.host in {"fourhorsemencomics.net" "www.fourhorsemencomics.net"})
+```
+
+It blocks every visitor from outside the US on every hostname in the zone, and Cloudflare's verified crawlers
+(Google, Bing, ...) everywhere except the website itself. Until 2026-11-19 it was
+`(ip.src.country ne "US") or (cf.client.bot)`, which blocked Googlebot from the website, so Google could not
+index it (Search Console: "Blocked due to access forbidden (403)"). If you rebuild the zone, recreate it with the
+new expression. The separate `gw-lanner Anthropic only` rule belongs to HomeCommander-Claude (its docs/REBUILD.md).
 
 ## The contact form
 
